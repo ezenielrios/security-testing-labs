@@ -18,23 +18,23 @@ nmap -sV <target_ip>
 ```bash
 nmap -p- -T4 <target_ip>
 ```
-Observations
+##Observations
 
 Service enumeration revealed multiple exposed services commonly associated with remote access, file sharing, and application hosting.
 
-Examples of services observed:
+##Examples of services observed:
 
-Remote access services (e.g., SSH, Telnet)
+-Remote access services (e.g., SSH, Telnet)
 
-Web services (HTTP)
+-Web services (HTTP)
 
-File sharing / RPC services (SMB, RPC)
+-File sharing / RPC services (SMB, RPC)
 
-Database services (e.g., MySQL or PostgreSQL)
+-Database services (e.g., MySQL or PostgreSQL)
 
-Remote desktop / management services (e.g., VNC)
+-Remote desktop / management services (e.g., VNC)
 
-Risk Context
+##Risk Context
 
 A large number of exposed services increases the attack surface.
 
@@ -42,7 +42,7 @@ Legacy protocols (such as Telnet) may transmit data in cleartext.
 
 Administrative and file-sharing services are frequent targets for credential-based attacks.
 
-Evidence
+##Evidence
 
 Sanitized screenshots of Nmap output are stored in:
 
