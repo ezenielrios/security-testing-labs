@@ -2,6 +2,14 @@
 
 This repository documents hands-on security testing labs performed in a controlled, isolated environment to practice safe scoping, network discovery, service enumeration, and security tooling analysis.
 
+## What This Repository Demonstrates
+- Structured security testing methodology
+- Ethical scoping and isolated lab execution
+- Evidence-backed network discovery and service enumeration
+- Clear risk articulation and remediation-focused reporting
+- Awareness of tooling limitations and enterprise constraints
+
+
 ## Scope & Ethics
 - All testing was conducted in a local, isolated lab network.
 - Targets were intentionally vulnerable or owned test systems.
