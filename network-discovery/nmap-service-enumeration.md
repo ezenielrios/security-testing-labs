@@ -1,49 +1,57 @@
 # Nmap Service Enumeration
 
 ## Objective
-Enumerate open ports and identify exposed network services on the selected target host within the isolated lab environment.
+Enumerate open ports and identify exposed network services on the selected target host within an isolated lab environment.
 
-## Commands Used
-
-Fast scan of common ports:
+## Command Used
 ```bash
-nmap -T4 -F <target_ip>
+nmap -o <sanitized_output> <target_ip>
 ```
-Service and version detection:
-```bash
-nmap -sV <target_ip>
-```
+## Results
 
-(When appropriate) full TCP port scan:
-```bash
-nmap -p- -T4 <target_ip>
-```
-## Observations
+The scan identified a large number of open TCP ports, indicating extensive service exposure.
 
-Service enumeration revealed multiple exposed services commonly associated with remote access, file sharing, and application hosting.
+Observed open services included (non-exhaustive):
 
-## Examples of services observed:
+- FTP (21/tcp)
 
-- Remote access services (e.g., SSH, Telnet)
+- SSH (22/tcp)
 
-- Web services (HTTP)
+- Telnet (23/tcp)
 
-- File sharing / RPC services (SMB, RPC)
+- SMTP (25/tcp)
 
-- Database services (e.g., MySQL or PostgreSQL)
+- DNS (53/tcp)
 
-- Remote desktop / management services (e.g., VNC)
+- HTTP (80/tcp)
 
-## Risk Context
+- RPC services (111/tcp)
 
-A large number of exposed services increases the attack surface.
+- SMB / NetBIOS (139/tcp, 445/tcp)
 
-Legacy protocols (such as Telnet) may transmit data in cleartext.
+- Remote command execution services (512–514/tcp)
 
-Administrative and file-sharing services are frequent targets for credential-based attacks.
+- NFS (2049/tcp)
+
+- Database services (MySQL 3306/tcp, PostgreSQL 5432/tcp)
+
+- VNC (5900/tcp)
+
+- IRC (6667/tcp)
+
+The presence of multiple administrative, legacy, and network services significantly increases the attack surface.
+
+## Notes
+
+- Reverse DNS warnings were observed, which is common in isolated lab environments without configured DNS.
+
+- The target system appears intentionally vulnerable and exposes numerous services by design.
 
 ## Evidence
 
-Sanitized screenshots of Nmap output are stored in:
+## Evidence
 
-sanitized-screenshots/
+![Sanitized Nmap Service Enumeration Output](sanitized-screenshots/kali-linux-2025.4nmapScans.sanitized.png)
+
+*Figure 1: Sanitized Nmap output showing exposed network services on the target host within an isolated lab environment.*
+
