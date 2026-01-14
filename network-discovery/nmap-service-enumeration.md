@@ -10,14 +10,14 @@ Fast scan of common ports:
 nmap -T4 -F <target_ip>
 ```
 Service and version detection:
-
+```bash
 nmap -sV <target_ip>
-
+```
 
 (When appropriate) full TCP port scan:
-
+```bash
 nmap -p- -T4 <target_ip>
-
+```
 Observations
 
 Service enumeration revealed multiple exposed services commonly associated with remote access, file sharing, and application hosting.
