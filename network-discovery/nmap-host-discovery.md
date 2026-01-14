@@ -7,27 +7,27 @@ Identify live hosts on the isolated lab subnet prior to conducting any targeted 
 ```bash
 nmap -sn <lab_subnet>/24
 ```
-Results
+## Results
 
 Multiple live hosts were identified within the lab network.
 
-Discovered hosts included:
+## Discovered hosts included:
 
-Attacker VM
+- Attacker VM
 
-Target VM(s)
+- Target VM(s)
 
-Virtual network gateway / host adapter
+- Virtual network gateway / host adapter
 
 One target host was selected for follow-on service enumeration.
 
-Notes
+## Notes
 
 Reverse DNS warnings may appear in isolated lab environments without configured DNS.
 
 Host discovery was strictly limited to the lab subnet.
 
-Evidence
+## Evidence
 
 Sanitized Nmap output screenshots are stored in:
 
