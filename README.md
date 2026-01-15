@@ -3,11 +3,12 @@
 This repository documents hands-on security testing labs performed in a controlled, isolated environment to practice safe scoping, network discovery, service enumeration, and security tooling analysis.
 
 ## What This Repository Demonstrates
-- Structured security testing methodology
-- Ethical scoping and isolated lab execution
-- Evidence-backed network discovery and service enumeration
-- Clear risk articulation and remediation-focused reporting
-- Awareness of tooling limitations and enterprise constraints
+- Practical security testing workflows, not theoretical exercises
+- Manual web application testing using Burp Suite (request/response analysis)
+- Network discovery and enumeration using Nmap
+- Vulnerability management tooling with OpenVAS/GVM, including setup and troubleshooting
+- Emphasis on methodology, limitations, and realistic constraints
+
 
 
 ## Scope & Ethics
