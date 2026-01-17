@@ -1,31 +1,80 @@
 # Security Testing Labs
 
-This repository documents hands-on security testing labs performed in a controlled, isolated environment to practice safe scoping, network discovery, service enumeration, and security tooling analysis.
+Hands-on security testing documentation covering network discovery, web application security, and tooling limitations using intentionally vulnerable lab environments.
 
-## What This Repository Demonstrates
-- Practical security testing workflows, not theoretical exercises
-- Manual web application testing using Burp Suite (request/response analysis)
-- Network discovery and enumeration using Nmap
-- Vulnerability management tooling with OpenVAS/GVM, including setup and troubleshooting
-- Emphasis on methodology, limitations, and realistic constraints
+This repository demonstrates practical security engineering skills, including traffic interception, authentication testing, service enumeration, and structured reporting aligned with industry standards.
 
-
+---
 
 ## Scope & Ethics
-- All testing was conducted in a local, isolated lab network.
-- Targets were intentionally vulnerable or owned test systems.
-- No testing was performed against external or unauthorized systems.
 
-## Tools Used
-- Kali Linux
-- Nmap
-- OpenVAS / Greenbone (setup + feed troubleshooting)
-- VirtualBox (isolated networking)
+All testing documented in this repository was performed in **isolated lab environments** using **intentionally vulnerable applications** such as OWASP Juice Shop.
 
-## Lab Modules
-- `network-discovery/` — host discovery + service enumeration with Nmap
-- `tooling-limitations/` — tooling constraints + what was done to validate results
-- `methodology/` — repeatable testing workflow used during the lab
+- No external or unauthorized systems were tested
+- No real user data was accessed
+- Activities are strictly educational and defensive in nature
 
-## How to Use This Repo
-Start in `network-discovery/overview.md`, then review the discovery and enumeration notes and screenshots.
+---
+
+## Repository Structure
+
+security-testing-labs/
+├── methodology/
+├── network-discovery/
+├── web-application-testing/
+│ ├── authentication/
+│ │ ├── evidence/
+│ │ └── testcase-02-authentication-interception.md
+│ ├── authorization-testing.md
+│ ├── findings-summary.md
+│ └── overview.md
+├── tooling-limitations/
+└── README.md
+
+---
+
+## Key Areas Covered
+
+### 🔎 Network Discovery
+- Host discovery and service enumeration using Nmap
+- Documentation of exposed services and attack surface considerations
+
+### 🌐 Web Application Security Testing
+- Proxy-based traffic interception with Burp Suite
+- Authentication request inspection and response analysis
+- Evidence-backed test cases with screenshots and observations
+
+### 🧰 Tooling & Limitations
+- Practical constraints encountered during scanning and interception
+- Environment and configuration considerations
+
+---
+
+## Example Test Case
+
+**Test Case 02 — Authentication Request Interception**
+
+- Captures `POST /rest/user/login` via Burp Suite
+- Observes `401 Unauthorized` responses for invalid credentials
+- Demonstrates visibility into sensitive authentication flows
+
+See:
+web-application-testing/authentication/testcase-02-authentication-interception.md
+
+---
+
+## Career Direction
+
+This repository reflects a focus on **Security Engineering and Security Testing**, emphasizing:
+
+- Understanding how applications behave under attack
+- Validating security controls through observation and evidence
+- Communicating findings clearly and professionally
+
+---
+
+## Disclaimer
+
+This repository is intended for **educational and defensive security purposes only**.
+
+Do not attempt to replicate these techniques on systems you do not own or have explicit permission to test.
