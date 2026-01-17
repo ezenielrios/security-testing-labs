@@ -39,24 +39,15 @@ Validate that HTTP traffic from the browser is successfully routed through Burp 
 3. Navigate to the OWASP Juice Shop login page:
 http://<target_ip>:3000/#/login
 
-vbnet
-Copy code
-
 4. Generate application traffic by browsing the site and attempting a login using invalid credentials.
 
 5. In Burp, navigate to:
 Proxy → HTTP history
 
-markdown
-Copy code
-
 6. Confirm that multiple Juice Shop endpoints appear in the HTTP history.
 
 7. Filter or locate the authentication request:
 POST /rest/user/login
-
-yaml
-Copy code
 
 8. Select the request and review both the **request** and **response** details.
 
@@ -67,13 +58,9 @@ Copy code
 - The authentication request was captured as:
 POST /rest/user/login
 
-csharp
-Copy code
 - The server responded with:
 401 Unauthorized
 
-yaml
-Copy code
 - This confirms that authentication requests are observable and that invalid credentials are rejected by the application.
 
 ---
@@ -112,6 +99,6 @@ Copy code
 ---
 
 ## Status
-✅ Test case completed
-📁 Evidence captured
+✅ Test case completed  
+📁 Evidence captured  
 📌 Ready for follow-on authentication testing
