@@ -58,16 +58,11 @@ http://<target_ip>:3000/#/login
 
 ## Evidence
 
-Screenshots supporting this test case are stored in:
+### HTTP History showing Juice Shop endpoints
+![Burp HTTP history showing Juice Shop endpoints](authentication/evidence/burp-http-history-juice-shop-endpoints.png)
 
-web-application-testing/sanitized-screenshots/
-
-
-Included evidence:
-
-- burp-http-history-juice-shop-endpoints.png
-
-- testcase-02-login-post-401-intercept.png
+### Login request captured (POST /rest/user/login → 401 Unauthorized)
+![Intercepted login POST returning 401 Unauthorized](authentication/evidence/testcase-02-login-post-401-intercept.png)
 
 ## Result
 
