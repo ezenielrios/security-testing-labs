@@ -1,80 +1,124 @@
 # Security Testing Labs
 
-Hands-on security testing documentation covering network discovery, web application security, and tooling limitations using intentionally vulnerable lab environments.
+Hands-on security engineering labs focused on **network discovery**, **web application testing**, and **security tooling analysis** using intentionally vulnerable targets in a controlled lab environment.
 
-This repository demonstrates practical security engineering skills, including traffic interception, authentication testing, service enumeration, and structured reporting aligned with industry standards.
-
----
-
-## Scope & Ethics
-
-All testing documented in this repository was performed in **isolated lab environments** using **intentionally vulnerable applications** such as OWASP Juice Shop.
-
-- No external or unauthorized systems were tested
-- No real user data was accessed
-- Activities are strictly educational and defensive in nature
+This repository documents **how I test systems**, not just the tools I use.
 
 ---
 
-## Repository Structure
+## 🎯 Purpose
+
+The goal of this repository is to demonstrate practical security engineering skills, including:
+
+- Identifying exposed services and attack surface
+- Intercepting and analyzing authentication flows
+- Understanding session handling and authorization boundaries
+- Documenting findings clearly and responsibly
+- Recognizing tooling limitations and operational realities
+
+All testing is performed **ethically** against **intentionally vulnerable applications** in isolated lab environments.
+
+---
+
+## 🧪 Lab Environment
+
+- **Attacker:** Kali Linux
+- **Targets:** 
+  - Metasploitable2 
+  - OWASP Juice Shop
+- **Tools:** 
+  - Nmap 
+  - Burp Suite Community Edition 
+  - Docker 
+- **Network:** Isolated host-only / local lab networks
+
+No production, external, or unauthorized systems were tested.
+
+---
+
+## 📂 Repository Structure
 
 security-testing-labs/
 ├── methodology/
+│ └── testing-approach.md
+│
 ├── network-discovery/
-├── web-application-testing/
-│ ├── authentication/
-│ │ ├── evidence/
-│ │ └── testcase-02-authentication-interception.md
-│ ├── authorization-testing.md
+│ ├── overview.md
+│ ├── nmap-host-discovery.md
+│ ├── nmap-service-enumeration.md
 │ ├── findings-summary.md
-│ └── overview.md
+│ └── sanitized-screenshots/
+│
+├── web-application-testing/
+│ └── authentication/
+│ ├── testcase-02-authentication-interception.md
+│ ├── testcase-03-session-behavior.md
+│ └── evidence/
+│
 ├── tooling-limitations/
+│ └── openvas-gvmd-limitations.md
+│
 └── README.md
 
----
-
-## Key Areas Covered
-
-### 🔎 Network Discovery
-- Host discovery and service enumeration using Nmap
-- Documentation of exposed services and attack surface considerations
-
-### 🌐 Web Application Security Testing
-- Proxy-based traffic interception with Burp Suite
-- Authentication request inspection and response analysis
-- Evidence-backed test cases with screenshots and observations
-
-### 🧰 Tooling & Limitations
-- Practical constraints encountered during scanning and interception
-- Environment and configuration considerations
+Each section builds on the previous one, moving from **surface-level discovery** to **application-layer security testing**.
 
 ---
 
-## Example Test Case
+## 🔍 What’s Covered
 
-**Test Case 02 — Authentication Request Interception**
+### Network Discovery
+- Host discovery and service enumeration
+- Attack surface identification
+- Risk-based observations and remediation context
 
-- Captures `POST /rest/user/login` via Burp Suite
-- Observes `401 Unauthorized` responses for invalid credentials
-- Demonstrates visibility into sensitive authentication flows
+### Web Application Testing
+- Proxying traffic through Burp Suite
+- Intercepting authentication requests
+- Analyzing unauthorized vs authenticated behavior
+- Observing API responses and session state handling
 
-See:
-web-application-testing/authentication/testcase-02-authentication-interception.md
-
----
-
-## Career Direction
-
-This repository reflects a focus on **Security Engineering and Security Testing**, emphasizing:
-
-- Understanding how applications behave under attack
-- Validating security controls through observation and evidence
-- Communicating findings clearly and professionally
+### Tooling & Limitations
+- Practical challenges encountered during setup and use
+- Why tools sometimes fail or behave unexpectedly
+- Lessons learned from troubleshooting real environments
 
 ---
 
-## Disclaimer
+## 📸 Evidence Handling
 
-This repository is intended for **educational and defensive security purposes only**.
+- Screenshots are **sanitized**
+- No credentials, tokens, or personal data are exposed
+- Evidence supports findings without oversharing sensitive details
 
-Do not attempt to replicate these techniques on systems you do not own or have explicit permission to test.
+This mirrors real-world reporting standards.
+
+---
+
+## 🧠 Mindset & Approach
+
+This repository emphasizes:
+
+- Understanding **why** something behaves a certain way
+- Validating assumptions with evidence
+- Thinking like a defender while testing like an attacker
+- Clear, structured documentation suitable for technical audiences
+
+---
+
+## 🚀 What’s Next
+
+Planned expansions include:
+- Authorization bypass testing
+- Input validation and injection testing
+- API misuse scenarios
+- Mapping findings to OWASP ASVS and Top 10 controls
+
+---
+
+## ⚖️ Disclaimer
+
+All activities documented here were conducted in controlled lab environments for educational and professional development purposes only.
+
+---
+
+If you’re reviewing this repository as part of an interview process, I’m happy to walk through **how each test was designed, executed, and interpreted**.
